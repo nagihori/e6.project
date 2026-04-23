@@ -1,0 +1,29 @@
+:root {
+  font-family: Inter, 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #eaf4ff;
+  background: #0a1322;
+  --brand-cyan: #10a8ff;
+  --brand-pink: #ff4880;
+  --brand-blue: #2078d0;
+  --bg-base: #0a1322;
+  --bg-panel: #12223b;
+  --border: #234b79;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% -8%, rgba(16, 168, 255, 0.34), transparent 42%),
+    radial-gradient(circle at 86% 12%, rgba(255, 72, 128, 0.28), transparent 35%),
+    var(--bg-base);
+}
