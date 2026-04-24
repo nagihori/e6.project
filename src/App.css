@@ -6,8 +6,9 @@
 
 .viewport {
   position: relative;
-  height: 95vh;
+  height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   background:
