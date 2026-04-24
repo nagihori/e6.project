@@ -362,7 +362,7 @@ function App() {
           <h2>最後に意味を与えるのは、<strong>あなた。</strong></h2>
           <div className="pause-card">
             <p className="pause-label">この体験が <strong>e6</strong>です。</p>
-            <p className="pause-copy">あなたの選択が結論へと繋がるのを感じましたか？</p>
+            <p className="pause-copy">あなたの選択が結果を変えることに気づきましたか？</p>
           </div>
         </section>
 
