@@ -6,7 +6,7 @@
 
 .viewport {
   position: relative;
-  height: 100vh;
+  height: 95vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -18,7 +18,7 @@
 
 .block {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   scroll-snap-align: start;
   display: grid;
   place-content: center;
