@@ -248,6 +248,15 @@ function App() {
             sectionRefs.current[0] = el
           }}
         >
+          <header>
+            <img src="/images/e6_logo_yoko_big.png" alt="e6 logo" />
+            <ul className="header-nav">
+              <li><a href="#">Introduction</a></li>
+              <li><a href="#">Interaction</a></li>
+              <li><a href="#">Feedback</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </header>
           <div className="intro-words" aria-hidden="true">
             <p>Experience</p>
             <p>Choice</p>

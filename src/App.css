@@ -39,6 +39,59 @@
   letter-spacing: 0.01em;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  /*
+  background: radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--tone) 30%, transparent), transparent 30%),
+              var(--tone-deep);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  */
+}
+header img {
+  height: 100%;
+  object-fit: contain;
+}
+header ul {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+header ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0 0.3rem;
+}
+header ul li a {
+  text-decoration: none;
+  color: color-mix(in srgb, var(--tone-soft) 70%, white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tone-soft) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tone-soft) 15%, transparent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  &:hover {
+    background: color-mix(in srgb, var(--tone-soft) 40%, white);
+    color: color-mix(in srgb, var(--tone-deep) 80%, black);
+  }
+}
+
 /* Intro Section 
    ======================================== */
 .intro-words {
@@ -75,6 +128,7 @@
 }
 
 .intro-content {
+  padding-top: 80px;
   position: relative;
   z-index: 1;
   display: grid;
