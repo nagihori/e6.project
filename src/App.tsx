@@ -32,6 +32,7 @@ function App() {
   const [stance, setStance] = useState(0.5)
   const [activeIndex, setActiveIndex] = useState(0)
   const [mapOpen, setMapOpen] = useState(false)
+  const [headerOpen, setHeaderOpen] = useState(false)
   const [whiteTransition, setWhiteTransition] = useState(0)
   const [pulseDrift, setPulseDrift] = useState(0)
   const [hasChosenStance, setHasChosenStance] = useState(false)
@@ -217,11 +218,12 @@ function App() {
   const scrollToSection = (index: number) => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     setMapOpen(false)
+    setHeaderOpen(false)
   }
 
   return (
     <div className="prototype" style={dynamicStyle}>
-      <aside className={`minimap ${mapOpen ? 'open' : ''}`}>
+      <aside className={`minimap ${mapOpen ? 'open' : ''} ${activeIndex >= 3 ? 'follow light' : 'rest'}`}>
         <button className="minimap-toggle" onClick={() => setMapOpen((prev) => !prev)}>
           {mapOpen ? '閉じる' : '目次'}
         </button>
@@ -250,7 +252,15 @@ function App() {
         >
           <header>
             <img src="/images/e6_logo_yoko_big.png" alt="e6 logo" />
-            <ul className="header-nav">
+            <button
+              className="header-nav-toggle"
+              aria-expanded={headerOpen}
+              aria-controls="header-nav"
+              onClick={() => setHeaderOpen((prev) => !prev)}
+            >
+              {headerOpen ? '閉じる' : 'MENU'}
+            </button>
+            <ul id="header-nav" className={`header-nav ${headerOpen ? 'open' : ''}`}>
               <li><a href="#">Introduction</a></li>
               <li><a href="#">Interaction</a></li>
               <li><a href="#">Feedback</a></li>
