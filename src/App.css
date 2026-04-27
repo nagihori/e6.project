@@ -50,13 +50,6 @@ header {
   display: flex;
   align-items: left;
   justify-content: left;
-  /*
-  background: radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--tone) 30%, transparent), transparent 30%),
-              var(--tone-deep);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  */
 }
 header img {
   height: 100%;
@@ -882,8 +875,8 @@ p.message-strong {
 .minimap {
   position: absolute;
   right: 14px;
-  top: 24px;
-  transform: none;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 20;
   transition: opacity 220ms ease, transform 220ms ease;
 }
@@ -1034,7 +1027,8 @@ p.message-strong {
   }
 
   .header-nav-toggle {
-    display: inline-flex;
+    /*display: inline-flex;*/
+    display: none;
     align-items: center;
     justify-content: center;
   }
@@ -1121,7 +1115,6 @@ p.message-strong {
   .minimap-toggle {
     display: inline-flex;
     margin-left: auto;
-    margin-bottom: 8px;
   }
 
   .minimap ul {
