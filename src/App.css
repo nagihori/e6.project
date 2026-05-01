@@ -1077,6 +1077,16 @@ header ul li a {
   box-shadow: 0 28px 80px rgba(4, 10, 20, 0.42);
 }
 
+.share-section {
+  background: linear-gradient(180deg, #0f1220 0%, #17152a 100%);
+  padding-bottom: 104px;
+}
+
+.share-panel--inline {
+  width: min(620px, calc(100vw - 48px));
+  margin: 0 auto;
+}
+
 .share-close {
   position: absolute;
   top: 12px;

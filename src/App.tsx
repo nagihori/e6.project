@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import './App.css'
 
-const sectionTitles = [
+const baseSectionTitles = [
   '体験',
   '得意',
   '関わり方',
@@ -259,6 +259,8 @@ function App() {
   const sharePrompt = 'あなたはe6でどう動きますか？'
   const shareTag = '#e6ならこう動く'
   const shareText = `${sharePrompt}\n${relationHintRole}\n${shareHeadline}\n${shareTag}`
+  const sectionTitles = selectedHint ? [...baseSectionTitles, 'シェア'] : baseSectionTitles
+  const shareSectionIndex = selectedHint ? sectionTitles.length - 1 : null
 
   const dynamicStyle = useMemo(() => {
     const soft = mixColor([16, 168, 255], [255, 140, 80], q2)
@@ -738,9 +740,48 @@ function App() {
           </div>
         </section>
 
+        {selectedHint && (
+          <section
+            className="block free-scroll share-section"
+            data-index={9}
+            ref={(el) => { sectionRefs.current[9] = el }}
+          >
+            <div className="share-panel share-panel--inline">
+              <p className="share-eyebrow">語ることが、参加の第一歩になる</p>
+              <h3>{sharePrompt}</h3>
+              <div className="share-card">
+                <IconDisplay
+                  iconSrc={iconSrc}
+                  size={Math.min(iconSize, 150)}
+                  color={toneColor}
+                  showGhost={true}
+                  ghostSize={GHOST_REFERENCE_SIZE}
+                  stageSize={176}
+                />
+                <p className="share-card-role">{relationHintRole}</p>
+                <p className="share-card-copy">{shareHeadline}</p>
+                <div className="share-meta">
+                  <span>{selectedOption?.label ?? 'まだ選択中'}</span>
+                  <span>{q2Label}</span>
+                  <span>{q3Label}</span>
+                </div>
+              </div>
+              <p className="share-tag">{shareTag}</p>
+              <div className="share-actions">
+                <button className="ghost" onClick={handleCopyShare}>
+                  {copied ? 'コピーしました' : 'シェア文をコピー'}
+                </button>
+                <button className="skip-link share-knowledge-link" onClick={() => scrollToSection(6)}>
+                  e6について知る
+                </button>
+              </div>
+            </div>
+          </section>
+        )}
+
       </main>
 
-      {activeIndex >= 5 && !shareOpen && (
+      {activeIndex >= 5 && !shareOpen && (shareSectionIndex === null || activeIndex < shareSectionIndex) && (
         <button
           className="share-fab"
           onClick={() => (selectedHint ? setShareOpen(true) : scrollToSection(1))}
