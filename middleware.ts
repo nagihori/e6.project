@@ -3,7 +3,7 @@ import {
   getAuthConfigState,
   getAuthCookieName,
   isAccessTokenValid,
-} from './lib/site-auth'
+} from './lib/site-auth.js'
 
 const ALLOWED_PATHS = new Set(['/unlock.html', '/api/auth', '/api/logout'])
 

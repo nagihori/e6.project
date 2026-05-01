@@ -2,6 +2,10 @@ const COOKIE_NAME = 'e6_site_access'
 const COOKIE_VALUE = 'granted'
 const ONE_WEEK_IN_SECONDS = 60 * 60 * 24 * 7
 
+declare const process: {
+  env: Record<string, string | undefined>
+}
+
 const textEncoder = new TextEncoder()
 
 function toHex(buffer: ArrayBuffer): string {

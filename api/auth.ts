@@ -4,7 +4,7 @@ import {
   getAuthCookieMaxAge,
   getAuthCookieName,
   isPasswordValid,
-} from '../lib/site-auth'
+} from '../lib/site-auth.js'
 
 function jsonResponse(body: unknown, init?: ResponseInit) {
   return new Response(JSON.stringify(body), {
