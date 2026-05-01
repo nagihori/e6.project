@@ -31,3 +31,16 @@ Vercelでプロジェクトをインポートすれば、以下設定でビル�
 
 - Build Command: `npm run build`
 - Output Directory: `dist`
+
+## パスワード保護
+
+Basic認証ではなく、`Vercel Middleware + API + HttpOnly Cookie` でサイト全体を保護する構成を追加しています。  
+未認証のアクセスは `/unlock.html` にリダイレクトされ、正しいパスワード入力後に全ページへ入れます。
+
+Vercel の Environment Variables に以下を設定してください。
+
+- `SITE_PASSWORD`: 共有するパスワード
+- `SITE_AUTH_SECRET`: Cookie署名用の長いランダム文字列
+- `SITE_PASSWORD_SHA256`: 任意。平文パスワードの代わりにSHA-256ハッシュを使いたい場合のみ設定
+
+ローカル用サンプルは `.env.example` に入れています。
